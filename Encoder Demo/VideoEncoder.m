@@ -33,7 +33,7 @@
                               [NSNumber numberWithInt: width], AVVideoWidthKey,
                               [NSNumber numberWithInt:height], AVVideoHeightKey,
                               [NSDictionary dictionaryWithObjectsAndKeys:
-                                    [NSNumber numberWithBool:NO], AVVideoAllowFrameReorderingKey, nil],
+                                    @YES, AVVideoAllowFrameReorderingKey, nil],
                                     AVVideoCompressionPropertiesKey,
                               nil];
     _writerInput = [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:settings];

@@ -210,7 +210,6 @@ public:
 private:
     int m_framenum;
     int m_nBitsFrame;
-    bool m_bDeltaPresent;
     bool m_bFrameOnly;
     
     bool m_bField;
@@ -259,13 +258,22 @@ public:
     
     void SetHeader(avcCHeader* avc);
     bool GetPOC(NALUnit* nal, int* pPOC);
-    
+    int getFrameNum()
+    {
+        return m_frameNum;
+    }
+    int getLastLSB()
+    {
+        return m_lastlsb;
+    }
 private:
     int m_prevLSB;
     int m_prevMSB;
     avcCHeader* m_avc;
     SeqParamSet m_sps;
     bool m_deltaPresent;
+    int m_frameNum;
+    int m_lastlsb;
 };
 
 
